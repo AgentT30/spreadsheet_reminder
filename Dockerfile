@@ -1,9 +1,9 @@
-FROM node
+FROM node:latest
 
 COPY package.json ./
 COPY secrets.json ./
 COPY index.js ./
 
-WORKDIR .
-
 RUN npm i
+
+CMD ["/bin/sh","node ./index.js"]
